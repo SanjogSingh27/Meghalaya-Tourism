@@ -82,9 +82,9 @@ We welcome contributions to enhance the Meghalaya Tourism project. To contribute
 
 ![Living Root Bridge](https://res.cloudinary.com/roundglass/image/upload/f_auto/ar_4:3,c_fill,w_auto/g_auto,q_auto/v1649765953/rg/collective/media/meghalaya-nongriat-double-decker-living-root-bridge-greenery-people-ashwin-ezhumalai_mmdvms.jpg)
 
-![Nohsngithiang Falls](https://www.memphistours.com/india/india-travel-guide/india-attractions/wiki/meghalaya-india)
+![Nohsngithiang Falls](https://assamholidays.com/wp-content/uploads/2024/10/EK1S7aGUUAA04f_.jpg)
 
-![Dawki River](https://www.memphistours.com/india/india-travel-guide/india-attractions/wiki/meghalaya-india)
+![Dawki River](https://nomadicweekends.com/blog/wp-content/uploads/2019/09/66851483_2355591914534526_8824396371357335552_o-1024x683.jpg)
 
 ## 📚 References
 
@@ -103,5 +103,6 @@ Feel free to customize this `README.md` further to suit your project's specific 
 [1]: https://www.indiatodayne.in/meghalaya/story/meghalaya-tourism-to-grow-to-rs-12000-crore-annual-footfall-to-reach-20-lakh-by-2028-715195-2023-11-22?utm_source=chatgpt.com "Meghalaya tourism to grow to Rs 12,000 crore, annual footfall to reach 20 lakh by 2028 - Meghalaya tourism to grow to Rs 12,000 crore, annual footfall to reach 20 lakh by 2028 -"
 [2]: https://en.wikipedia.org/wiki/Nohsngithiang_Falls?utm_source=chatgpt.com "Nohsngithiang Falls"
 [3]: https://en.wikipedia.org/wiki/Wei_Sawdong_Falls?utm_source=chatgpt.com "Wei Sawdong Falls"
+
 
 
