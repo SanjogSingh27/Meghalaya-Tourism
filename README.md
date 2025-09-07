@@ -1,8 +1,3 @@
-[![Meghalaya | Meghalaya India | Meghalaya Tourism](https://images.openai.com/thumbnails/url/--gdHHicu1mSUVJSUGylr5-al1xUWVCSmqJbkpRnoJdeXJJYkpmsl5yfq5-Zm5ieWmxfaAuUsXL0S7F0Tw5K9i7zMzdMzIzwLawyyzEIyjUzLEo2y3Fxyy_3yi93yilMMkgKNEkvjHT38Kx0LMt2THSLtDS1cK8wCVQrBgAZtimN)](https://www.memphistours.com/india/india-travel-guide/india-attractions/wiki/meghalaya-india?utm_source=chatgpt.com)
-
-Certainly! Here's a dynamic and visually appealing `README.md` tailored for your Meghalaya Tourism project:
-
----
 
 # 🌿 Meghalaya Tourism: Explore the Abode of Clouds
 
@@ -103,6 +98,7 @@ Feel free to customize this `README.md` further to suit your project's specific 
 [1]: https://www.indiatodayne.in/meghalaya/story/meghalaya-tourism-to-grow-to-rs-12000-crore-annual-footfall-to-reach-20-lakh-by-2028-715195-2023-11-22?utm_source=chatgpt.com "Meghalaya tourism to grow to Rs 12,000 crore, annual footfall to reach 20 lakh by 2028 - Meghalaya tourism to grow to Rs 12,000 crore, annual footfall to reach 20 lakh by 2028 -"
 [2]: https://en.wikipedia.org/wiki/Nohsngithiang_Falls?utm_source=chatgpt.com "Nohsngithiang Falls"
 [3]: https://en.wikipedia.org/wiki/Wei_Sawdong_Falls?utm_source=chatgpt.com "Wei Sawdong Falls"
+
 
 
 
