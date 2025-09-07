@@ -29,10 +29,8 @@ Nestled in the northeastern corner of India, Meghalaya is renowned for its lush 
 
 ## 🛠️ Technologies Used
 
-* **Frontend**: HTML, CSS, JavaScript
-* **Backend**: Node.js, Express
-* **Database**: MongoDB
-* **Mapping**: Leaflet.js for interactive maps
+* **Frontend**: HTML, CSS, JavaScript, React.js, Next.js
+* **Database**: Firebase
 
 ## 🚀 Getting Started
 
@@ -98,6 +96,7 @@ Feel free to customize this `README.md` further to suit your project's specific 
 [1]: https://www.indiatodayne.in/meghalaya/story/meghalaya-tourism-to-grow-to-rs-12000-crore-annual-footfall-to-reach-20-lakh-by-2028-715195-2023-11-22?utm_source=chatgpt.com "Meghalaya tourism to grow to Rs 12,000 crore, annual footfall to reach 20 lakh by 2028 - Meghalaya tourism to grow to Rs 12,000 crore, annual footfall to reach 20 lakh by 2028 -"
 [2]: https://en.wikipedia.org/wiki/Nohsngithiang_Falls?utm_source=chatgpt.com "Nohsngithiang Falls"
 [3]: https://en.wikipedia.org/wiki/Wei_Sawdong_Falls?utm_source=chatgpt.com "Wei Sawdong Falls"
+
 
 
 
