@@ -1,1 +1,1 @@
-self.__REACT_LOADABLE_MANIFEST="{}"
+self.__REACT_LOADABLE_MANIFEST="{\"pages\\\\index.js -> @/components/pages/ExplorePage\":{\"id\":\"pages\\\\index.js -> @/components/pages/ExplorePage\",\"files\":[\"static/chunks/components_pages_ExplorePage_jsx.js\"]}}"

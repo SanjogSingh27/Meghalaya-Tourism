@@ -1,79 +1,120 @@
-import { useState } from 'react';
-import { CreditCardIcon, XIcon } from '@/components/icons';
+import { useState, useMemo } from 'react';
+import { SpinnerIcon } from '@/components/icons';
 
-export default function PaymentModal({ isOpen, onClose, bookingDetails, onPaymentSuccess }) {
-    const [isProcessing, setIsProcessing] = useState(false);
-    const [error, setError] = useState('');
-    
-    // Mock card details state
-    const [card, setCard] = useState({ number: '', name: '', expiry: '', cvv: '' });
+// Helper to format currency
+const formatCurrency = (value) => new Intl.NumberFormat('en-IN', { style: 'currency', currency: 'INR', minimumFractionDigits: 0 }).format(value);
 
-    if (!isOpen) return null;
+export default function PaymentModal({ isOpen, onClose, onPaymentSuccess, bookingDetails }) {
+    const [loading, setLoading] = useState(false);
+    const [paymentMethod, setPaymentMethod] = useState('card'); // 'card' or 'qr'
 
-    const handlePayment = async (e) => {
-        e.preventDefault();
-        // Basic validation
-        if(!card.number || !card.name || !card.expiry || !card.cvv) {
-            setError('Please fill in all card details.');
-            return;
-        }
-        setError('');
-        setIsProcessing(true);
+    // --- FIX: Generate a real QR code URL ---
+    // useMemo ensures this only recalculates when bookingDetails change
+    const qrCodeUrl = useMemo(() => {
+        if (!bookingDetails || paymentMethod !== 'qr') return '';
         
-        // Simulate payment processing delay
+        // 1. Construct a standard UPI payment string
+        const upiData = {
+            pa: 'meghalaya.tourism@okhdfcbank', // Payee Address (Virtual Payment Address)
+            pn: bookingDetails.hotel,            // Payee Name
+            am: bookingDetails.totalCost.toFixed(2), // Transaction Amount
+            cu: 'INR',                           // Currency Code
+            tn: `Booking for ${bookingDetails.hotel}` // Transaction Note
+        };
+        const upiString = `upi://pay?${new URLSearchParams(upiData).toString()}`;
+        
+        // 2. Use a public API to generate the QR code image from the UPI string
+        return `https://api.qrserver.com/v1/create-qr-code/?size=200x200&data=${encodeURIComponent(upiString)}`;
+    }, [bookingDetails, paymentMethod]);
+
+
+    if (!isOpen || !bookingDetails) return null;
+
+    const handlePayment = (e) => {
+        e.preventDefault();
+        setLoading(true);
+        // Simulate a payment processing delay
         setTimeout(() => {
-            const transactionId = `txn_${Date.now()}_${Math.random().toString(36).substr(2, 9)}`;
-            onPaymentSuccess({
-                paymentMethod: 'Card',
-                transactionId,
-                amount: bookingDetails.totalCost,
-                status: 'completed'
-            });
-            setIsProcessing(false);
-            onClose(); // Close modal on success
+            setLoading(false);
+            onPaymentSuccess();
         }, 2000);
     };
 
-    const handleInputChange = (e) => {
-        const { name, value } = e.target;
-        setCard(prev => ({ ...prev, [name]: value }));
-    };
-
     return (
-        <div className="fixed inset-0 bg-black bg-opacity-70 flex justify-center items-center z-50 animate-fade-in">
-            <div className="bg-gray-800 text-white rounded-xl shadow-2xl w-full max-w-md m-4 p-8 transform transition-all duration-300 ease-in-out scale-95 hover:scale-100">
-                <div className="flex justify-between items-center mb-6">
-                    <h2 className="text-2xl font-bold text-green-400">Complete Your Payment</h2>
-                    <button onClick={onClose} className="text-gray-400 hover:text-white">
-                        <XIcon className="w-6 h-6" />
-                    </button>
-                </div>
-                
-                <div className="bg-gray-900 p-4 rounded-lg mb-6">
-                    <p className="text-gray-400">Destination: <span className="font-semibold text-white">{bookingDetails.destination}</span></p>
-                    <p className="text-gray-400">Hotel: <span className="font-semibold text-white">{bookingDetails.hotel}</span></p>
-                    <p className="text-gray-400">Total Nights: <span className="font-semibold text-white">{bookingDetails.nights}</span></p>
-                    <p className="text-2xl font-bold text-green-400 mt-2">Total Amount: ${bookingDetails.totalCost.toFixed(2)}</p>
-                </div>
-                
-                <form onSubmit={handlePayment} className="space-y-4">
-                    <div className="relative">
-                        <input name="number" onChange={handleInputChange} type="text" placeholder="Card Number" className="w-full bg-gray-700 p-3 pl-12 rounded-lg focus:ring-2 focus:ring-green-500 outline-none"/>
-                        <CreditCardIcon className="w-6 h-6 absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"/>
-                    </div>
-                    <input name="name" onChange={handleInputChange} type="text" placeholder="Cardholder Name" className="w-full bg-gray-700 p-3 rounded-lg focus:ring-2 focus:ring-green-500 outline-none"/>
-                    <div className="flex space-x-4">
-                        <input name="expiry" onChange={handleInputChange} type="text" placeholder="MM/YY" className="w-1/2 bg-gray-700 p-3 rounded-lg focus:ring-2 focus:ring-green-500 outline-none"/>
-                        <input name="cvv" onChange={handleInputChange} type="text" placeholder="CVV" className="w-1/2 bg-gray-700 p-3 rounded-lg focus:ring-2 focus:ring-green-500 outline-none"/>
+        <div className="fixed inset-0 bg-black/60 backdrop-blur-sm flex items-center justify-center p-4 z-50 animate-fade-in">
+            <div className="w-full max-w-lg bg-gray-800 rounded-2xl shadow-xl border border-gray-700 transform transition-all duration-300">
+                <div className="p-8 space-y-6">
+                    <div className="text-center">
+                        <h2 className="text-3xl font-bold text-white">Confirm Payment</h2>
+                        <p className="text-gray-400 mt-1">Booking for <span className="font-semibold text-cyan-400">{bookingDetails.hotel}</span></p>
                     </div>
 
-                    {error && <p className="text-red-500 text-sm">{error}</p>}
+                    {/* Payment Method Tabs */}
+                    <div className="flex bg-gray-900/50 rounded-lg p-1 border border-gray-700">
+                        <button 
+                            onClick={() => setPaymentMethod('card')}
+                            className={`w-1/2 py-2.5 text-sm font-medium rounded-md transition-colors ${paymentMethod === 'card' ? 'bg-green-600 text-white' : 'text-gray-300 hover:bg-gray-700'}`}
+                        >
+                            Pay with Card
+                        </button>
+                        <button 
+                            onClick={() => setPaymentMethod('qr')}
+                            className={`w-1/2 py-2.5 text-sm font-medium rounded-md transition-colors ${paymentMethod === 'qr' ? 'bg-green-600 text-white' : 'text-gray-300 hover:bg-gray-700'}`}
+                        >
+                            Scan QR Code
+                        </button>
+                    </div>
                     
-                    <button type="submit" disabled={isProcessing} className="w-full bg-green-600 hover:bg-green-700 text-white font-bold py-3 rounded-lg transition duration-300 disabled:bg-gray-500">
-                        {isProcessing ? 'Processing...' : `Pay $${bookingDetails.totalCost.toFixed(2)}`}
-                    </button>
-                </form>
+                    {/* Conditional Content based on Payment Method */}
+                    <div className="mt-4">
+                        {paymentMethod === 'card' ? (
+                            <form onSubmit={handlePayment} className="space-y-4">
+                                <div>
+                                    <label htmlFor="cardNumber" className="text-sm font-medium text-gray-300">Card Number</label>
+                                    <input type="text" id="cardNumber" placeholder="0000 0000 0000 0000" className="w-full mt-1 bg-gray-700 text-white rounded-lg border-gray-600 focus:ring-green-500 focus:border-green-500 py-3 px-4"/>
+                                </div>
+                                <div className="flex space-x-4">
+                                    <div className="w-1/2">
+                                        <label htmlFor="expiryDate" className="text-sm font-medium text-gray-300">Expiry Date</label>
+                                        <input type="text" id="expiryDate" placeholder="MM/YY" className="w-full mt-1 bg-gray-700 text-white rounded-lg border-gray-600 focus:ring-green-500 focus:border-green-500 py-3 px-4"/>
+                                    </div>
+                                    <div className="w-1/2">
+                                        <label htmlFor="cvv" className="text-sm font-medium text-gray-300">CVV</label>
+                                        <input type="text" id="cvv" placeholder="123" className="w-full mt-1 bg-gray-700 text-white rounded-lg border-gray-600 focus:ring-green-500 focus:border-green-500 py-3 px-4"/>
+                                    </div>
+                                </div>
+                            </form>
+                        ) : (
+                            // --- FIX: Render the generated image instead of a static icon ---
+                            <div className="text-center p-4 bg-white rounded-lg flex flex-col items-center justify-center">
+                               {qrCodeUrl ? (
+                                    <img src={qrCodeUrl} alt="Scan to pay with UPI" width="200" height="200" />
+                               ) : (
+                                    <SpinnerIcon />
+                               )}
+                                <p className="mt-2 text-sm text-gray-700 font-medium">Scan this code with any UPI app to pay.</p>
+                            </div>
+                        )}
+                    </div>
+
+                    <div className="pt-4 border-t border-gray-700">
+                        <div className="flex justify-between items-center text-lg">
+                            <span className="text-gray-300">Total Amount:</span>
+                            <span className="font-bold text-green-400 text-2xl">{formatCurrency(bookingDetails.totalCost)}</span>
+                        </div>
+                    </div>
+
+                    <div className="flex items-center justify-between space-x-4">
+                         <button onClick={onClose} className="w-1/2 py-3 font-semibold text-white bg-gray-600 rounded-lg hover:bg-gray-500 transition-colors">
+                            Cancel
+                        </button>
+                        <button onClick={handlePayment} disabled={loading} className="w-1/2 py-3 font-semibold text-white bg-green-600 rounded-lg hover:bg-green-700 transition-colors flex items-center justify-center disabled:bg-gray-500">
+                            {loading ? <SpinnerIcon /> : 'Pay Now'}
+                        </button>
+                    </div>
+                </div>
             </div>
         </div>
     );
 }
+

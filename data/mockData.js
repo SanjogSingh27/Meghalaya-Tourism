@@ -11,6 +11,7 @@ export const destinations = [
             'https://mlpqh7z1y0z3.i.optimole.com/cb:asB8.8ca/w:640/h:427/q:mauto/f:best/https://shillongtraveltaxi.in/wp-content/uploads/2024/09/wei-sawdong-falls.jpg',
             'https://www.kajaawa.com/wp-content/uploads/2022/05/Seven-sister-falls-1-kaga.jpg',
         ],
+        coords: [25.3006, 91.7323], // [latitude, longitude]
     },
     {
         name: 'Shillong',
@@ -20,6 +21,7 @@ export const destinations = [
             'https://images.unsplash.com/photo-1620766165457-a8025baa82e0?q=80&w=1974&auto=format&fit=crop',
             'https://static.toiimg.com/photo/51324390.cms',
         ],
+        coords: [25.5788, 91.8933],
     },
     {
         name: 'Mawlynnong Village',
@@ -29,6 +31,7 @@ export const destinations = [
             'https://nomadicweekends.com/blog/wp-content/uploads/2019/10/m-3.jpg',
             'https://static.wixstatic.com/media/9b64ce_92580011d1614de08e9bb12cb8f1543c~mv2.jpg/v1/fill/w_568,h_426,al_c,q_80,usm_0.66_1.00_0.01,enc_avif,quality_auto/9b64ce_92580011d1614de08e9bb12cb8f1543c~mv2.jpg',
         ],
+        coords: [25.2075, 91.9136],
     },
     {
         name: 'Dawki',
@@ -38,6 +41,7 @@ export const destinations = [
             'https://nomadicweekends.com/blog/wp-content/uploads/2019/09/66851483_2355591914534526_8824396371357335552_o.jpg',
             'https://assamholidays.com/wp-content/uploads/2023/06/Umgnot-River-Dawki-1.jpg',
         ],
+        coords: [25.1856, 92.0152],
     },
     {
         name: 'Nohkalikai Falls',
@@ -47,6 +51,7 @@ export const destinations = [
             'https://www.meghalayatourism.in/wp-content/uploads/2020/07/Noh-Sngithiang-Falls-1.jpg',
             'https://www.savaari.com/blog/wp-content/uploads/2022/12/nohkalikai.jpg',
         ],
+        coords: [25.2811, 91.6883],
     },
     {
         name: 'Laitlum Canyons',
@@ -56,6 +61,7 @@ export const destinations = [
             'https://travenjo.com/wp-content/uploads/2019/06/Laitlum-Canyons-Scenic-View.jpg?x58748',
             'https://wanderon-images.gumlet.io/blogs/new/2024/02/1-min.png',
         ],
+        coords: [25.5255, 91.9213],
     },
     {
         name: 'Umiam Lake',
@@ -65,6 +71,87 @@ export const destinations = [
             'https://oddessemania.in/wp-content/uploads/2024/02/dl.beatsnoop.com-1706790982.jpg',
             'https://upload.wikimedia.org/wikipedia/commons/thumb/6/6a/Umiam_Lake_-_by_Vikramjit_Kakati.png/330px-Umiam_Lake_-_by_Vikramjit_Kakati.png',
         ],
+        coords: [25.6664, 91.8953],
+    },
+    {
+        name: 'Mawsmai Cave',
+        description: 'A breathtaking limestone cave system offering an adventurous spelunking experience.',
+        images: [
+            'https://res.cloudinary.com/kmadmin/image/upload/v1725704723/kiomoi/mawsmai_cave_meghalaya_7385.jpg',
+            'https://hblimg.mmtcdn.com/content/hubble/img/cherrapunji/mmt/activities/m_activities_cherrapunji_mawsmai_cave_l_400_640.jpg',
+            'https://oddessemania.in/wp-content/uploads/2024/07/Mawsmai-Cave-1-1024x683.jpg'
+        ],
+        coords: [25.2475, 91.7061],
+    },
+    {
+        name: 'Krang Suri Falls',
+        description: 'A spectacular waterfall with a crystal clear, deep blue plunge pool.',
+        images: [
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRSN1h5I0sj6-xcrQ1FRKsBSs8msIHpObmnRg&s',
+            'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/16/9e/62/4e/amazing-place.jpg?w=1200&h=1200&s=1',
+            'https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2023/12/19/cdbe1aad4fec31e07fee44a5d3fef1d9_1000x1000.jpg'
+        ],
+        coords: [25.4336, 92.1749],
+    },
+    {
+        name: 'Double Decker Root Bridge',
+        description: 'A world-famous, two-tiered living root bridge handmade by the Khasi tribes.',
+        images: [
+            'https://upload.wikimedia.org/wikipedia/commons/4/46/Double_Decker_Living_Tree_Root_Bridges%2C_Meghalaya.jpg',
+            'https://i0.wp.com/bijitdutta.com/wp-content/uploads/2017/07/Trekking_Root_Bridge-15.jpg?ssl=1',
+            'https://s7ap1.scene7.com/is/image/incredibleindia/double-decker-living-root-bridge-cherrapunjee-meghalaya-2-attr-hero?qlt=82&ts=1742167901740'
+        ],
+        coords: [25.2801, 91.6888],
+    },
+    {
+        name: 'Balpakram National Park',
+        description: 'A vast park known for its pristine wilderness, canyons, and rich biodiversity.',
+        images: [
+            'https://travellingslacker.com/wp-content/uploads/2023/01/Balpakram-19.jpeg',
+            'https://www.team-bhp.com/forum/attachments/travelogues/2368484d1687010435t-offroad-drive-land-eternal-winds-balpakram-national-park-meghalaya-dsc_0460.jpg',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5MV7lTPXwUmZbaKLC_VOq5WSCrD5H0eDMqQ&s'
+        ],
+        coords: [25.2014, 90.8503],
+    },
+    {
+        name: 'Nartiang Monoliths',
+        description: 'The largest collection of monoliths in one single area, a site of great cultural importance.',
+        images: [
+            'https://static.toiimg.com/thumb/94179219/nartiang-monoliths.jpg?width=1200&height=900',
+            'https://www.meghalayatourism.in/wp-content/uploads/2020/07/Nartiang.jpg',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR12GrHT6Ojcl5zX2KWwuB1C3BYPYdUL6kEgg&s'
+        ],
+        coords: [25.5645, 92.2131],
+    },
+    {
+        name: 'Don Bosco Museum',
+        description: 'A major institution showcasing the rich culture of the indigenous people of North East India.',
+        images: [
+            'https://s7ap1.scene7.com/is/image/incredibleindia/don-bosco-museum-shillong-meghalaya-2-attr-hero?qlt=82&ts=1742155422455',
+            'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTiXjTd4OnxQiX3NG3bRC-ewqcfOfuxzZoqGw&s',
+            'https://s7ap1.scene7.com/is/image/incredibleindia/don-bosco-museum-shillong-meghalaya-attr-about?qlt=82&ts=1742159771450'
+        ],
+        coords: [25.5901, 91.9056],
+    },
+    {
+        name: 'Elephant Falls',
+        description: 'A three-tiered cascading waterfall, one of Shillong\'s most popular tourist sites.',
+        images: [
+            'https://upload.wikimedia.org/wikipedia/commons/thumb/3/36/Elephant_Falls_Meghalaya.jpg/1200px-Elephant_Falls_Meghalaya.jpg',
+            'https://s7ap1.scene7.com/is/image/incredibleindia/elephant-falls-shillong-meghalaya-1-attr-hero?qlt=82&ts=1751460572862',
+            'https://travelsetu.com/apps/uploads/new_destinations_photos/destination/2023/12/18/65f77cd305e62109a2392d19bc2ccac6_1000x1000.jpg'
+        ],
+        coords: [25.5369, 91.8213],
+    },
+    {
+        name: 'Mawphlang Sacred Forest',
+        description: 'An ancient, sacred grove protected by traditional beliefs, with a unique ecosystem.',
+        images: [
+            'https://dynamic-media-cdn.tripadvisor.com/media/photo-o/11/0b/94/c9/sacred-forest.jpg?w=1200&h=-1&s=1',
+            'https://s7ap1.scene7.com/is/image/incredibleindia/mawphlang-sacred-grove-cherrapunjee-meghalaya-1-attr-hero?qlt=82&ts=1742178453364',
+            'https://img-cdn.publive.online/fit-in/1200x675/filters:format(webp)/30-stades/media/media_files/YMvGbaJlY53ejjDf4KB1.jpg'
+        ],
+        coords: [25.4984, 91.7533],
     },
 ];
 
@@ -152,6 +239,63 @@ export const vehicles = [
         price: 1300,
         image: 'https://cdn.bikedekho.com/processedimages/bajaj/bajaj-pulsar-200-ns/source/bajaj-pulsar-200-ns68552a2c91fc3.jpg?imwidth=412&impolicy=resize',
     },
+];
+
+export const travelPackages = [
+    {
+        name: "Meghalaya Adventure Trail",
+        duration: "5 Days / 4 Nights",
+        price: 25000,
+        image: "https://thegypsychiring.com/wp-content/uploads/2021/04/Mawryngkhang-Trek-Bamboo-Trail-Meghalaya-The-Gypsy-Chiring.jpg",
+        description: "For the thrill-seekers, this package covers trekking to the Double Decker Root Bridge, caving in Mawsmai, and cliff jumping in Dawki.",
+        highlights: ["Double Decker Bridge Trek", "Mawsmai Cave Exploration", "Dawki Cliff Jumping", "Shnongpdeng River Sports"],
+        benefits: ["Expert Local Guide", "All Activity Permits", "Standard Accommodations", "Private 4x4 Vehicle"]
+    },
+    {
+        name: "Romantic Waterfalls Getaway",
+        duration: "4 Days / 3 Nights",
+        price: 30000,
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcThcg9ifHa0x4_kqbxH8sv-cjgT-nmBjthrsg&s",
+        description: "A luxurious and romantic tour focused on Meghalaya's most majestic waterfalls, including Nohkalikai, Seven Sisters, and Elephant Falls.",
+        highlights: ["Nohkalikai Falls View", "Seven Sisters Falls", "Elephant Falls, Shillong", "Umiam Lake Sunset"],
+        benefits: ["Boutique Resort Stays", "Couples' Spa Session", "Private Sedan Car", "Daily Breakfast & Dinner"]
+    },
+    {
+        name: "Cultural Heritage Tour",
+        duration: "6 Days / 5 Nights",
+        price: 28000,
+        image: "https://i0.wp.com/www.tusktravel.com/blog/wp-content/uploads/2021/11/Meghalaya-set-up-museum-for-Garo-tribe-to-attract-tourists.jpg?fit=1024%2C690&ssl=1",
+        description: "Immerse yourself in the rich Khasi culture. Visit Asia's cleanest village, interact with locals, and explore ancient monoliths.",
+        highlights: ["Mawlynnong Village Walk", "Nartiang Monoliths", "Don Bosco Museum", "Local Khasi Cuisine Experience"],
+        benefits: ["Homestay Experiences", "Cultural Guide", "All Museum Entry Fees", "Comfortable SUV"]
+    },
+    {
+        name: "Family Fun Expedition",
+        duration: "5 Days / 4 Nights",
+        price: 35000,
+        image: "https://internationalyouthclub.org/wp-content/uploads/2025/02/Meghalaya-Tour-Package-%E2%80%93-Magical-Meghalaya2-1.jpeg",
+        description: "A package designed for all ages, featuring easy-to-access viewpoints, boat rides, eco-parks, and comfortable family-friendly stays.",
+        highlights: ["Umiam Lake Boating", "Ward's Lake, Shillong", "Mawkdok Dympep Valley View", "Dawki River Boating"],
+        benefits: ["Family-friendly Hotels", "Spacious Innova/Ertiga", "Picnic Lunches", "Flexible Itinerary"]
+    },
+    {
+        name: "Backpacker's Budget Trip",
+        duration: "7 Days / 6 Nights",
+        price: 15000,
+        image: "https://www.emaglobal.com.sg/wp-content/uploads/2022/04/backpacking-discover-the-best-way-to-travel-on-a-budget.jpg",
+        description: "An affordable journey for solo travelers and groups. Utilizes shared transport and backpacker hostels to cover major sights on a budget.",
+        highlights: ["Shared Sumo to Cherrapunji", "Hostel Stays in Shillong", "Community Kitchen Meals", "Public Transport Exploration"],
+        benefits: ["Budget Hostel Stays", "Guidance on Shared Transport", "Group Trekking Options", "Cost-effective Itinerary"]
+    },
+    {
+        name: "The Ultimate Meghalaya",
+        duration: "10 Days / 9 Nights",
+        price: 60000,
+        image: "https://www.nomadictribes.in/wp-content/uploads/Meghalaya-Blog.jpg",
+        description: "A comprehensive, all-inclusive luxury tour covering every major destination from the Garo Hills to the Jaintia Hills in comfort and style.",
+        highlights: ["All Major Waterfalls & Caves", "Tura Peak Expedition", "Living Root Bridges", "Exclusive Riverside Camping"],
+        benefits: ["Luxury Accommodations", "All-inclusive Meals", "Dedicated SUV & Driver", "All Permits and Fees Covered"]
+    }
 ];
 
 export const historicalBookings = [

@@ -1,6 +1,10 @@
 import '@/styles/global.css';
+import 'leaflet/dist/leaflet.css'; // This line is crucial for the map styles
 
-export default function App({ Component, pageProps }) {
+function MyApp({ Component, pageProps }) {
+  // FIX: Corrected 'page_props' to 'pageProps'
   return <Component {...pageProps} />;
 }
+
+export default MyApp;
 

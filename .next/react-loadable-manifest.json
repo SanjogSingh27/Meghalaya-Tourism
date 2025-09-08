@@ -1,1 +1,8 @@
-{}
+{
+  "pages\\index.js -> @/components/pages/ExplorePage": {
+    "id": "pages\\index.js -> @/components/pages/ExplorePage",
+    "files": [
+      "static/chunks/components_pages_ExplorePage_jsx.js"
+    ]
+  }
+}
